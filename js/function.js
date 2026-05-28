@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", page4Animation);
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
   spaceBetween: 50,
-  
+
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -56,7 +56,18 @@ menu.addEventListener("click", function () {
 });
 // Menu Responsive End
 
-var loader = document.querySelector(".loader")
-setTimeout(function(){
-    loader.style.top = "-100%"
-},4000)
+// loader Start
+var loader = document.querySelector(".loader");
+setTimeout(function () {
+  loader.style.top = "-100%";
+}, 4000);
+// loader End
+
+// Studio Image Scroll Start
+const image = document.querySelector(".studio-hero-image img");
+window.addEventListener("scroll", () => {
+  let scrollValue = window.scrollY;
+  image.style.transform = `translateY(${scrollValue * 0.1}px)`;
+});
+// Studio Image Scroll End
+
